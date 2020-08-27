@@ -1,71 +1,34 @@
 import React, { Component } from 'react';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import CampaignInfo from './CampaignInfoComponent';
 
-class Directory extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            campaigns: [
-                {
-                    id: 0,
-                    name: 'Powdered Beer - Just Add Carbonation',
-                    category: 'Travel & Outdoors',
-                    image: 'assets/images/beer-3.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$5,017 USD Raised -- 25% of Goal Complete'
-                },
-                {
-                    id: 1,
-                    name: 'Offline Language Translation Earbuds',
-                    category: 'Technology',
-                    image: 'assets/images/earbuds-1.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$96,134 USD Raised -- 120% of Goal Complete'
-                },
-                {
-                    id: 2,
-                    name: 'Bring a Coworking Space to Sheboygan',
-                    category: 'Community Projects',
-                    image: 'assets/images/cowork-2.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$150,865 USD Raised -- 75% of Goal Complete'
-                },
-                {
-                    id: 3,
-                    name: 'Nail Stickers Made With Real Nail Polish',
-                    category: 'Skin, Hair, and Nails',
-                    image: 'assets/images/nails-orange.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$2,329 USD Raised -- 53% of Goal Complete'
-                },
-                {
-                    id: 4,
-                    name: 'Hard-Shelled Suitcase With Charging Ports',
-                    category: 'Travel & Outdoors',
-                    image: 'assets/images/suitcase-1.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$82,932 USD Raised -- 90% of Goal Complete'
-                },
-                {
-                    id: 5,
-                    name: 'Technology Conference - Northeast Wisconsin',
-                    category: 'Events & Conferences',
-                    image: 'assets/images/programming-1.jpg', 
-                    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-                    raised: '$7,487 USD Raised -- 31% of Goal Complete'
-                },
-            ],
-        };
-    }
+class Directory extends Component {  
+
+    renderSelectedCampaign(campaign) {
+        if (campaign) {
+            return (
+                <Card>
+                    <CardImg top src={campaign.image} alt={campaign.name} />
+                    <CardBody>
+                        <CardTitle>{campaign.name}</CardTitle>
+                        <CardText>{campaign.description}</CardText>
+                    </CardBody>
+                </Card>
+            );
+        }
+        return <div />;
+    } 
 
     render() {
-        const directory = this.state.campaigns.map(campaign => {
+        const directory = this.props.campaigns.map ( campaign => {
             return (
-                <div key={campaign.id} className="col">
-                    <img src={campaign.image} alt={campaign.name} />
-                    <h2>{campaign.name}</h2>
-                    <p>{campaign.category}</p>
-                    <p>{campaign.description}</p>
-                    <p>{campaign.raised}</p>
+                <div key={campaign.id} className="col-md-5 m-1">
+                    <Card onClick={() => this.onCampaignSelect(campaign)}>
+                        <CardImg width="100%" src={campaign.image} alt={campaign.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{campaign.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Card>
                 </div>
             );
         });
@@ -73,8 +36,11 @@ class Directory extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    {directory}
+                {directory}
                 </div>
+                {/* <div className="col-md-5  m-1">
+                    {this.renderSelectedCampaign(this.state.selectedCampaign)}
+                </div> */}
             </div>
         );
     }
