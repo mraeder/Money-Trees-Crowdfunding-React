@@ -37,11 +37,13 @@ class CampaignInfo extends Component {
     render() {
         if (this.props.campaign){
             return (
-                <div className="row">
-                    {this.renderCampaign(this.props.campaign)}
-                    {this.renderProgress(this.props.campaign.progress)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampaign(this.props.campaign)}
+                        {this.renderProgress(this.props.campaign.progress)}
+                    </div>
                 </div>
-            )
+            );
         }
         return <div/>;
     }

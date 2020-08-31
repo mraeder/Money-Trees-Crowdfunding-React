@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
+import CampaignInfo from './CampaignInfoComponent';
 import { CAMPAIGNS } from '../shared/campaigns';
 
 class Main extends Component {
@@ -8,12 +9,12 @@ class Main extends Component {
         super(props);
         this.state = {
             campaigns: CAMPAIGNS,
-            selectedCampaign : null
+            selectedCampaign: null
         };
     }
 
-    onCampaignSelect(campaign) {
-        this.setState({ selectedCampaign: campaign });
+    onCampaignSelect(campaignId) {
+        this.setState({ selectedCampaign: campaignId });
     }
 
     render() {
@@ -24,8 +25,8 @@ class Main extends Component {
                     <NavbarBrand href="/">Money Trees</NavbarBrand>
                 </div>
                 </Navbar>
-                <Directory campaigns={this.state.campaigns} />
-                <CampaignInfo campaign={this.state.selectedCampaign}/>
+                <Directory campaigns={this.state.campaigns} onClick={campaignId => this.onCampaignSelect(campaignId)}/>
+                <CampaignInfo campaign={this.state.campaigns.filter(campaign => campaign.id === this.state.selectedCampaign)[0]} />
             </div>
         );
     }
