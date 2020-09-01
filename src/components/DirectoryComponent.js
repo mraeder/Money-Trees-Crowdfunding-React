@@ -14,10 +14,10 @@ function RenderDirectoryItem ({campaign, onClick}) {
 
 function Directory (props) {
 
-    const directory = props.campaign.map(campaign => {
+    const directory = props.campaigns.map (campaign => {
         return (
             <div key={campaign.id} className="col-md-5 m-1">
-                <RenderDirectoryItem campaign={campaign} onClick={props.onClick} />
+                <RenderDirectoryItem campaign={campaign} />
             </div>
         );
     });

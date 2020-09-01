@@ -16,7 +16,7 @@ function RenderCampaign({campaign}) {
     );
 }
  
-function renderProgress({progress}) {
+function RenderProgress({progress}) {
     if(progress) {
         return(
             <div className="col-md-5 m-1">
