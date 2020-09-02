@@ -26,6 +26,16 @@ h2 {
   font-size: 60px;
 }
 
+h4 {
+  color: #df3777;
+  font-size: 30px;
+}
+
+h5 {
+  color: #0f9b71;
+  font-size: 40px;
+}
+
 .card-img-overlay .card-title {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -39,6 +49,11 @@ h2 {
   padding: 50px 0;
   border-bottom: 1px ridge;
   min-height: 200px;
+}
+
+.address {
+  color:#0f9b71;
+  font-size: 22px;
 }
 
 .site-footer {

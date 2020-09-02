@@ -1,14 +1,17 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, CardSubtitle } from 'reactstrap'; 
+import { Link } from 'react-router-dom';
 
-function RenderDirectoryItem ({campaign, onClick}) {
+function RenderDirectoryItem ({campaign}) {
     return (
-        <Card onClick={() => onClick(campaign.id)}>
-            <CardImg width="100%" src={campaign.image} alt={campaign.name} />
-            <CardImgOverlay>
-                <CardTitle>{campaign.name}</CardTitle> 
-                <CardSubtitle class="subtitle">{campaign.category}</CardSubtitle>
-            </CardImgOverlay>
+        <Card>
+            <Link to={`/directory/${campaign.id}`}>
+                <CardImg width="100%" src={campaign.image} alt={campaign.name} />
+                <CardImgOverlay>
+                    <CardTitle>{campaign.name}</CardTitle> 
+                    <CardSubtitle class="subtitle">{campaign.category}</CardSubtitle>
+                </CardImgOverlay>
+            </Link>
         </Card>
     );
 }
@@ -18,7 +21,7 @@ function Directory (props) {
     const directory = props.campaigns.map (campaign => {
         return (
             <div key={campaign.id} className="col-md-5 m-1">
-                <RenderDirectoryItem campaign={campaign} onClick={props.onClick} />
+                <RenderDirectoryItem campaign={campaign} />
             </div>
         );
     });
