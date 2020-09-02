@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-function RenderCampaign({campaign}) {
-     
+function RenderCampaign({campaign}) {  
     return (
         <div className="col-md-5 m-1">             
             <Card>

@@ -77,9 +77,37 @@ export const CAMPAIGNS = [
         description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
         progress: [
             {
-                id: 3, 
+                id: 5, 
                 text: "$7,487 USD Raised",
                 percent: "31% of Goal Complete"
+            }
+        ]
+    }, 
+    {
+        id: 6,
+        name: 'Belladonna Film Project',
+        category: 'Film & Theater',
+        image: 'assets/images/lights-camera.jpg', 
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        progress: [
+            {
+                id: 6, 
+                text: "$11,981 USD Raised",
+                percent: "24% of Goal Complete"
+            }
+        ]
+    }, 
+    {
+        id: 7,
+        name: 'Think Tank - Sheboygan, WI',
+        category: 'Education & Innovation',
+        image: 'assets/images/cowork-1.jpg', 
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        progress: [
+            {
+                id: 7, 
+                text: "$5,048 USD Raised",
+                percent: "71% of Goal Complete"
             }
         ]
     }

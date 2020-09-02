@@ -7,10 +7,8 @@ function Footer(props) {
                 <div className="row">             
                     <div className="col-4 col-sm-2 offset-1">
                         <h5>Links</h5>
-                        <ul className="list-unstyled">
-                            <li><a href="#">Home</a></li>
+                        <ul className="list-unstyled"> 
                             <li><a href="#">Explore Campaigns</a></li> 
-                            <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div className="col-6 col-sm-3 text-center">

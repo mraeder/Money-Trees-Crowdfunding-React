@@ -9,7 +9,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div class="col-6 col-sm-3 col-md-2 align-self-center">
-                                <img src="images/tree-icon.PNG" class="img-fluid" height="600" width="600" />
+                                <img src="assets/images/tree-icon.PNG" class="img-fluid" height="600" width="600" />
                             </div>
                             <div className="col">
                                 <h1>Money Trees</h1>
@@ -21,10 +21,8 @@ class Header extends Component {
 
                 <Navbar dark sticky="top">
                     <div className="container">
-                        <NavbarBrand href="/">
-                            <span> Home </span>
-                            <span> Explore Campaigns </span>
-                            <span> Contact Us </span>     
+                        <NavbarBrand href="/"> 
+                            <span> Explore Campaigns </span>     
                         </NavbarBrand>
                     </div>
                 </Navbar>

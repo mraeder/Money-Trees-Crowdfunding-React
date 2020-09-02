@@ -31,6 +31,10 @@ h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.card-subtitle {
+  color: white;
+}
+
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge;
@@ -44,7 +48,7 @@ h2 {
 
 .jumbotron {
   margin: 0;
-  padding: 30px;
+  padding: 40px;
   background-color:rgb(135, 180, 157);  
 }
 
