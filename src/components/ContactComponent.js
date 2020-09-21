@@ -59,7 +59,7 @@ class Contact extends Component {
                     </div>
                     <div className="col">
                         <a role="button" className="btn btn-link" href="tel:+9200000000"><i className="fa fa-phone" /> 920-000-0000</a><br />
-                        <a role="button" className="btn btn-link" href="mailto:crowdfunding@moneytrees.com"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
+                        <a role="button" className="btn btn-link" href="mailto:crowdfunding@moneytrees.com"><i className="fa fa-envelope-o" /> crowdfunding@moneytrees.com</a>
                     </div>
                 </div>
                 <div className="row row-content">
